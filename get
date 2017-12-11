@@ -1,0 +1,4 @@
+require('./app')(['db', 'key'])(({args, rest, url}) => {
+  const [db, key] = args
+  rest.put(`${url}/${db}/${key}`)
+})

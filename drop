@@ -1,0 +1,4 @@
+require('./app')(['db'])(({args, rest, url}) => {
+  const [db] = args
+  rest.delete(`${url}/${db}`)
+})

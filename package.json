@@ -1,0 +1,16 @@
+{
+  "name": "couch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "lock": true,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "yargs": "^10.0.3"
+  }
+}
