@@ -11,6 +11,12 @@
   "lock": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "chalk": "^2.3.0",
+    "durations": "^3.2.1",
+    "follow": "^1.0.0",
+    "log-a-log": "^2.0.0",
+    "ramda": "^0.25.0",
+    "request": "^2.83.0",
     "yargs": "^10.0.3"
   }
 }
