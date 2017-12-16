@@ -11,6 +11,7 @@
   "lock": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "bluebird": "^3.5.1",
     "chalk": "^2.3.0",
     "durations": "^3.2.1",
     "follow": "^1.0.0",
