@@ -1,7 +1,8 @@
-require('log-a-log')
+const {color} = require('log-a-log')
 
 const axios = require('axios')
 const Promise = require('bluebird')
+const chalk = require('chalk')
 const durations = require('durations')
 
 // Collect numeric stats 
@@ -68,6 +69,12 @@ const axiosOptions = {
 const mode = 'summary'
 const {url, attr} = couches[mode]
 
+const colorCode = status => (
+  (status > 499) ? color.yellow : (
+  (status > 399) ? color.red : (
+  (status > 299) ? color.blue : color.green
+)))(`${status}`)
+
 // Fetch the tip sequence from the CouchDB
 const getSeq = () => {
   const watch = durations.stopwatch().start()
@@ -75,7 +82,7 @@ const getSeq = () => {
   return axios.get(url, axiosOptions).then(resp => {
     watch.stop()
     const {status, data} = resp
-    console.log(`[${status}] (${watch})`, data[attr])
+    console.log(`[${colorCode(status)}] (${watch})`, data[attr])
 
     return {
       sequence: data[attr],
@@ -95,9 +102,8 @@ const nextSeq = () => {
     totalStats(duration.millis())
     intervalStats(duration.millis())
   })
+  .catch(console.error)
   .then(nextSeq, nextSeq)
 }
 
 nextSeq()
-
-
