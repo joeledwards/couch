@@ -1,4 +1,5 @@
-const {color} = require('log-a-log')
+const {colorCode} = require('./rest')
+require('log-a-log').init({alias: 'bench'})
 
 const axios = require('axios')
 const Promise = require('bluebird')
@@ -68,12 +69,6 @@ const axiosOptions = {
 //const mode = 'follow'
 const mode = 'summary'
 const {url, attr} = couches[mode]
-
-const colorCode = status => (
-  (status > 499) ? color.yellow : (
-  (status > 399) ? color.red : (
-  (status > 299) ? color.blue : color.green
-)))(`${status}`)
 
 // Fetch the tip sequence from the CouchDB
 const getSeq = () => {
