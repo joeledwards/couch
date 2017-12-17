@@ -1,5 +1,4 @@
-const {colorCode} = require('./rest')
-require('log-a-log').init({alias: 'bench'})
+const {colorCode} = require('./log')('bench')
 
 const axios = require('axios')
 const Promise = require('bluebird')

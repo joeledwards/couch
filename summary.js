@@ -1,4 +1,4 @@
-require('log-a-log')
+const {colorCode} = require('./log')('seq')
 
 const axios = require('axios')
 const durations = require('durations')
@@ -18,7 +18,7 @@ axios
 .then(resp => {
   watch.stop()
   const {status, data} = resp
-  console.log(`[${status}] (${watch})`, data)
+  console.log(`[${colorCode(status)}] (${watch})`, data)
 })
 .catch(console.error)
 

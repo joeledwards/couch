@@ -1,4 +1,4 @@
-require('log-a-log')
+const {colorCode} = require('./log')('seq')
 
 const axios = require('axios')
 const follow = require('follow')
