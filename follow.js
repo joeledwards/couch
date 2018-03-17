@@ -2,10 +2,11 @@ const {colorCode} = require('./log')('seq')
 
 const axios = require('axios')
 const follow = require('follow')
+const changesStream = require('changes-stream')
 
 const db = 'https://replicate.npmjs.com/registry'
 const context = 10
-const limit = 10
+const limit = 20
 const options = {
   db,
   include_docs: false

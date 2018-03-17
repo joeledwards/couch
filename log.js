@@ -7,7 +7,7 @@ const colorCode = status => (
 )))(`${status}`)
 
 module.exports = alias => {
-  logInit({alias})
+  logInit({alias, mode: 'coded'})
 
   return {
     colorCode
